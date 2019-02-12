@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="5px" height="9px" viewBox="0 0 5 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="未读消息" transform="translate(-234.000000, -86.000000)" fill="#666666" fill-rule="nonzero">
+            <g id="消息" transform="translate(127.000000, 74.000000)">
+                <path d="M107.260917,12.2196638 L107.219042,12.2615388 C106.926986,12.555496 106.926986,13.0300817 107.219042,13.3240388 L110.032323,16.1377888 L107.219823,18.9502888 C106.927767,19.244246 106.927767,19.7188317 107.219823,20.0127888 L107.261698,20.0546638 C107.555656,20.34672 108.030241,20.34672 108.324198,20.0546638 L111.680292,16.7002888 C111.971715,16.3825066 111.971715,15.8946336 111.680292,15.5768513 L108.324667,12.2196638 C108.030564,11.9267787 107.55502,11.9267787 107.260917,12.2196638 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

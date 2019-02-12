@@ -1,0 +1,7 @@
+.tip{
+  border-radius: 5rpx;
+  float: left;
+  font-size: 26rpx;
+  padding: 8rpx 10rpx;
+  margin-right: 10rpx;
+}

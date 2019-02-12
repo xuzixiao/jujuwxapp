@@ -1,0 +1,53 @@
+<view class='pldetail'>
+  <view class='infor'>
+    <infolist infordata="{{pldata}}" openId="{{openId}}"></infolist>
+  </view>
+  <view class='plcon'>
+    <view class='plcount'>
+      <text>最新评论（{{pldata.commentNumAll}}）</text>
+    </view>
+    <view class='plmain'>
+      <view class='nothavepl' wx:if="{{pldata.commentNumAll==0}}">暂无评论</view>
+      <view class='pl-list' wx:if="{{pldata.commentNumAll!=0}}"  wx:for="{{commentlist}}" wx:key="{{index}}">
+          <view class='pl-line'>
+            <view class='headimg'>
+              <image src='{{item.commentUser.avatarUrl}}'></image>
+            </view>
+            <view class='username'>{{item.commentUser.nickName}}</view>
+          </view>
+          <view class='pl-text'>
+            {{item.characters}}
+          </view>
+          <view class='pl-info'>
+            <text>5.5km</text>
+            <text>8分钟前</text>
+            <text class='delthispl'>删除</text>
+          </view>
+      </view>
+
+     
+    </view>
+  </view>
+</view>
+
+
+<view class="fabupinglun" wx:if="{{plwin}}">
+  <view class="fabu-main">
+  <view class='fabu-tit'>
+    <text>评论</text>
+<view class='close' bindtap='close'><van-icon name="close" size='22px' color="#9fa3a5cc" /></view>
+  </view>
+  <view class='fabu-concent'>
+    <textarea class='pltext' bindinput='pltextfun'></textarea>
+  </view>
+  <view class='fabu-btn'>
+  <button bindtap='submitpl'>发布评论</button>
+  </view>
+  </view>
+</view>
+
+
+
+<van-toast id="van-toast" />
+
+<button class='save' bindtap='seve'>发布评论</button>

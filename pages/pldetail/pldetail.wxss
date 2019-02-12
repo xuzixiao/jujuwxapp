@@ -1,0 +1,136 @@
+.pldetail{
+  background: #FBFBFB;
+  padding-bottom: 120rpx;
+}
+.pldetail .infor{
+  background: #fff;
+  padding: 0rpx 20rpx;
+  box-shadow: 10rpx 0rpx 20rpx rgba(0,0,0,.1);
+}
+.plcon{
+  padding:0px 40rpx;
+}
+.plcount{
+  width: 100%;
+  height: 80rpx;
+  font-size: 32rpx;
+  line-height: 90rpx;
+  color: #666666;
+}
+.pl-list{
+  border-bottom: 1px solid rgba(151,169,184,0.12);
+  padding: 20rpx 0px;
+}
+.pl-line{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content:left;
+}
+.headimg{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.headimg image{
+  width: 100%;
+  height: 100%;
+}
+.username{
+  margin-left:20rpx; 
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 60rpx;
+  font-weight: bold;
+}
+.pl-text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-left: 90rpx;
+  color: #666666;
+}
+.pl-info text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-right: 20rpx;
+}
+.pl-info{
+  margin-left: 80rpx;
+}
+.pl-info text{
+  color: #97A9B8;
+}
+.delthispl{
+  color: #3da2ff!important;
+}
+.fabupinglun{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: rgba(0,0,0,.6);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.fabu-main{
+  width: 90%;
+  height: 220px;
+  background: #fff;
+  position: fixed;
+  z-index: 1001;
+  left: 5%;
+  top: 30%;
+  border-radius: 6px;
+}
+
+.fabu-main .fabu-tit{
+  height: 40px;
+  line-height: 40px;
+  border-bottom: #f1f4f8 solid 1px;
+  position: relative;
+  margin:0 10px;
+}
+.fabu-main .fabu-tit text{
+  font-size: 16px;
+  line-height: 40px;
+  padding-left: 10px;
+  color: #666;
+}
+.fabu-main .fabu-tit .close{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 7.5px;
+  top: 7.5px;
+}
+.fabu-concent{
+  margin: 10px;
+}
+.pltext{
+  width: 98%;
+  border: #f1f4f8 solid 1px;
+  height: 100px;
+  line-height: 25px;
+  border-radius: 5px;
+  padding: 5px 1%;
+  box-shadow: rgba(0,0,0,.1);
+}
+.fabu-btn{
+  width: 100%;
+  height: 30px;
+  margin: 10px 0px;
+}
+.fabu-btn button{
+  background: #35CFC9;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+}
+.nothavepl{
+  text-align: center;
+  font-size: 20px;
+  line-height: 60px;
+}

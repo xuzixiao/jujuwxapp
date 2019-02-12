@@ -1,0 +1,11 @@
+<view class='getuseinfor'>
+
+  <open-data type="userAvatarUrl" class="userAvatarUrl"></open-data>
+  <open-data type="userNickName" class="userNickName"></open-data>
+  <text class='sqtext'>您需要授权后才可以继续使用聚聚哦~</text>
+  <!-- 需要使用 button 来授权登录 -->
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='shouquan'>授权登录</button>
+  <view wx:else>请升级微信版本</view>
+<image src='../../images/bg.jpg' class='bg'></image>
+
+</view>

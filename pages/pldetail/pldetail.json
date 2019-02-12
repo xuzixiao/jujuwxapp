@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "评论详情",
+  "usingComponents": {
+    "van-icon": "/vant/icon/index",
+    "infolist": "/components/pldetailinfo/infolist",
+    "unreadtip": "/components/unreadtip/unreadtip",
+    "van-toast": "/vant/toast/index"
+  }
+}

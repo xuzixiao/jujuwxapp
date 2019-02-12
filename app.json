@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/infor/infor",
+    "pages/activedetail/activedetail",
+    "pages/personal/personal",
+    "pages/userhomepage/userhomepage",
+    "pages/authorize/authorize",
+    "pages/releaseactive/releaseactive",
+    "pages/information/information",
+    "pages/activepushsuccess/activepushsuccess",
+    "pages/pushactive/pushactive",
+    "pages/myinfor/myinfor",
+    "pages/joinlist/joinlist",
+    "pages/activity/activity",
+    "pages/pldetail/pldetail",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/about/about",
+    "pages/feedback/feedback",
+    "components/activelist/activelist",
+    "pages/serveragreement/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于搜索就近的服务信息"
+    }
+  },
+  "window": {
+    "navigationBarTitleText": "聚聚，分享美好时光",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#97a9b8",
+    "selectedColor": "#4fd8cf",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/index-selected.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/infor/infor",
+        "text": "动态"
+      },
+      {
+        "selectedIconPath": "images/activity-selected.png",
+        "iconPath": "images/activity.png",
+        "pagePath": "pages/activity/activity",
+        "text": "活动"
+      },
+      {
+        "selectedIconPath": "images/mine-selected.png",
+        "iconPath": "images/mine.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+.userAvatarUrl{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 10rpx auto;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.userNickName{
+  display: block;
+  width:100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #222;
+}
+.bg{
+  display: block;
+  width: 100%;
+  height:650rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0px;
+}
+.shouquan{
+  display: block;
+  width: 250rpx;
+  height:80rpx;
+  margin: 0 auto;
+  font-size: 36rpx;
+  background: #ffffff;
+  color: #268d9c;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 37%;
+  z-index: 999;
+  left: 50%;
+  margin-left: -125rpx;
+  box-shadow: 2px 0px 5px rgba(0,0,0,.3);
+  border-radius: 80rpx;
+}
+.sqtext{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  height: 100rpx;
+  font-size: 30rpx;
+  color: #2e8984;
+  text-align: center;
+  line-height: 100rpx;
+}

@@ -1,0 +1,125 @@
+.pushactive{
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+.uploadban{
+  width: 100%;
+  height: 170px;
+  background: #FBFBFB;
+  border-bottom: 1px solid rgba(151,169,184,0.20);
+  position: relative;
+  overflow: hidden;
+}
+.uploadban image{
+  width: 100%;
+}
+.pushdata{
+ padding-left: 20px;
+}
+.pushline{
+  border-bottom: 1px solid rgba(151,169,184,0.12);
+  display: flex;
+  min-height: 37px;
+  line-height: 37px;
+  position: relative;
+  justify-content: left;
+}
+.pushline text{
+  width: 60px;
+  font-size: 13px;
+  color: #97A9B8;
+}
+.pushline input{
+  height: 37px;
+  line-height: 37px;
+  font-size: 13px;
+  margin-left: 23px;
+  width: 80%;
+}
+.pushline textarea{
+  margin-left: 23px;
+  width: 60%;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+  color: #97A9B8;
+  text-align: justify;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.phactive{
+  color: #BFBFBF; 
+  font-size: 13px;
+  line-height: 37px;
+}
+.next{
+  width: 5px;
+  height: 37px;
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+.choosestatus{
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+.choosestatus image{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 0px;
+  top: 12.5px;
+}
+.xieyitit{
+  display: inline-block;
+  color: #35CFC9;
+}
+.xieyi{
+  font-size: 13px;
+  color: #222222;
+  display:flex;
+  height: 40px;
+  line-height: 40px;
+  /* padding: 15px 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,.2);  */
+}
+.push-btn{
+  font-size:16px;
+  width: 100%;
+  height:40px;
+  line-height: 40px;
+  color: #35CFC9;
+  background: #FFFFFF;
+  box-shadow: 0 -2px 10px 0 rgba(0,109,117,0.10);
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 5;
+  text-align: center;
+}
+.upload-btn{
+  width: 100px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50px;
+}
+.upload-btn image{
+  width: 45px;
+  height: 45px;
+  padding: 0 27.5px;
+}
+.upload-btn text{
+  font-size: 14px;
+  color: #37D0C9;
+  text-align: center;
+}
+
+

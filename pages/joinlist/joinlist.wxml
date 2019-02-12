@@ -1,0 +1,26 @@
+<view class='joinlist'>
+
+<view class='joinlist-line'>
+  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
+  <text class='username'>一路同行</text>
+  <text class='outtime'>5分钟前</text>
+</view>
+<view class='joinlist-line'>
+  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
+  <text class='username'>一路同行</text>
+  <text class='outtime'>5分钟前</text>
+</view>
+<view class='joinlist-line'>
+  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
+  <text class='username'>一路同行</text>
+  <text class='outtime'>5分钟前</text>
+</view>
+<view class='joinlist-line'>
+  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
+  <text class='username'>一路同行</text>
+  <text class='outtime'>5分钟前</text>
+</view>
+
+
+
+</view>

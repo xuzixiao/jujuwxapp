@@ -1,0 +1,5 @@
+<!--pages/serveragreement/index.wxml-->
+<text class='title'>聚聚服务协议</text>
+<view class='body'>
+  <text></text>
+</view>

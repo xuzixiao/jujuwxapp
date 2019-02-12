@@ -1,0 +1,54 @@
+<view class='information'>
+
+<view class='info-list'>
+  <view class='userheadimg'><image src='/images/headimg.jpg'></image></view>
+  <view class='infodetail'>
+    <view class='nickname'>一路同行</view>
+    <view class='nicktext'>我想去，大概几点集合，在哪？</view>
+    <view class='outmin'>5 分钟前</view>
+  </view>
+  <view class='action-img'>
+    <image src='/images/infoimg.jpg' mode='aspectFill'></image>
+  </view>
+</view>
+
+<view class='info-list'>
+  <view class='userheadimg'><image src='/images/headimg.jpg'></image></view>
+  <view class='infodetail'>
+    <view class='nickname'>一路同行</view>
+    <view class='nicktext'>我想去，大概几点集合，在哪？</view>
+    <view class='outmin'>5 分钟前</view>
+  </view>
+  <view class='action-img'>
+    <image src='/images/infoimg.jpg' mode='aspectFill'></image>
+  </view>
+</view>
+
+<view class='info-list'>
+  <view class='userheadimg'><image src='/images/headimg.jpg'></image></view>
+  <view class='infodetail'>
+    <view class='nickname'>一路同行</view>
+    <view class='nicktext'>我想去，大概几点集合，在哪？</view>
+    <view class='outmin'>5 分钟前</view>
+  </view>
+  <view class='action-img'>
+    <image src='/images/infoimg.jpg' mode='aspectFill'></image>
+  </view>
+</view>
+
+<view class='info-list'>
+  <view class='userheadimg'><image src='/images/headimg.jpg'></image></view>
+  <view class='infodetail'>
+    <view class='nickname'>一路同行</view>
+    <view class='nicktext'>我想去，大概几点集合，在哪？</view>
+    <view class='outmin'>5 分钟前</view>
+  </view>
+  <view class='action-img'>
+    <image src='/images/infoimg.jpg' mode='aspectFill'></image>
+  </view>
+</view>
+
+
+<view class='notmore'>没有更多了哦~</view>
+
+</view>

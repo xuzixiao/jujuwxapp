@@ -1,0 +1,13 @@
+<view class='activity'>
+  <activelist wx:for="{{activelist}}" wx:key="{{index}}" activedata="{{item}}"></activelist>
+</view>
+<!-- wx:if="{{xialaload}}" -->
+   <view class='loading'>
+      <van-loading size="20px" color="#666666" wx:if="{{!nothave}}"/>
+      <text class='loadtext' wx:if="{{nothave}}">没有更多了</text>
+   </view>
+
+<view class='issue' bindtap='push'>
+  <image src='/images/saveactive.svg'></image>
+  <button></button>
+</view>

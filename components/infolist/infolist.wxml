@@ -1,0 +1,69 @@
+<view class='info-list'>
+<navigator url="/pages/userhomepage/userhomepage?uuid={{infordata.uuid}}">
+  <view class='info-head'>
+    <image src='{{infordata.createUser.avatarUrl}}' class='headimg'></image>
+    <view class='userinfo'>
+      <view class='username'>{{infordata.createUser.nickName}}</view>
+      <view class='usrtap'>
+        <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
+        <labeltag text="测试标签" color="#1890FF" background="#BAE7FF"></labeltag>
+        <labeltag text="测试标签" color="#F759AC" background="#FFD5E7"></labeltag>
+      </view>
+    </view>
+  </view>
+  </navigator>
+  <!-- 说明文字 -->
+  <navigator url="/pages/pldetail/pldetail?uuid={{infordata.uuid}}">
+    <view class='infotext'>
+      <text>{{infordata.characters}}</text>
+    </view>
+    <!-- 轮播 autoplay="true" -->
+    <view class='info-swipe'>
+      <swiper class="swiper" indicator-dots="true"  interval="5000" duration="500" indicator-color="#EDEDED" indicator-active-color="#B5F5EC">
+        <block wx:for="{{infordata.medias}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item.filePath}}" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 操作信息 -->
+    <view class='infohand'>
+
+      <view class='infohand-line'>
+        <image src='/images/address.jpg' class='icon'></image>
+        <text>{{infordata.place}}</text>
+        <text>{{distance}}</text>
+      </view>
+
+      <view class='infohand-line'>
+        <text>{{outtime}}</text>
+        <text>{{infordata.browseNum}}浏览</text>
+        <text class='delthisinfo' wx:if="{{showdel}}">删除</text>
+      </view>
+
+      <view class='infohand-line'>
+        <view class='l-item'>
+        <view class='infor-icon'>
+        <van-icon name="like-o" color='#97A9B8' size='14px'/>
+        </view>
+          <text>{{infordata.praiseNum}}</text>
+        </view>
+
+        <view class='l-item'>
+        <view class='infor-icon'>
+          <van-icon name="chat"  color='#97A9B8' size='14px' />
+        </view>
+          <text>{{infordata.commentNumAll}}</text>
+        </view>
+
+        <view class='l-item'>
+        <view class='infor-icon'>
+          <van-icon name="share"  color='#97A9B8' size='14px' />
+          </view>
+          <text>{{infordata.commentNumNotRead}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>

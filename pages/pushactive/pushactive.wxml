@@ -1,0 +1,88 @@
+<view class="pushactive">
+  <view class='uploadban'>
+   <image src='{{activebanimg}}'></image>
+    <view class='upload-btn' bindtap='addban'>
+      <image src='/images/carams.svg'></image>
+      <text>+ 添加活动封面</text>
+    </view>
+  </view>
+  <view class='pushdata'>
+    <view class='pushline'>
+      <text>微信号码</text>
+      <input
+        placeholder='请输入微信号'
+        placeholder-class='phactive'
+        value='{{wx}}'
+        bindinput='wxchange'>
+      </input>
+    </view>
+    <view class='pushline'>
+      <text>联系电话</text>
+      <input
+        placeholder='请输入您的电话'
+        placeholder-class='phactive'
+        value='{{phone}}'
+        bindinput='phonechange'>
+      </input>
+    </view>
+    <view class='pushline'>
+      <text>活动主题</text>
+      <input
+       placeholder='请输入活动主题' 
+       placeholder-class='phactive'
+       value='{{theme}}'
+       bindinput='themechange'>
+      </input>
+    </view>
+    <view class='pushline'>
+      <text>活动时间</text>
+      <view>
+        <input placeholder='请选择开始时间' value='{{ginTime}}'  bindtap='choosestart' disabled placeholder-class='phactive'></input>
+        <input placeholder='请选择结束时间' value='{{endTime}}' bindtap='chooseend' disabled placeholder-class='phactive'></input>
+      </view>
+    </view>
+    <view class='pushline'>
+      <text>活动地点</text>
+        <view bindtap='chooseaddres'>
+          <input placeholder='请设置' disabled value='{{address.name}}'></input>
+          <image src='/images/next.svg' class='next'></image>
+        </view>
+    </view>
+    <view class='pushline'>
+      <text>活动描述</text>
+      <textarea
+       placeholder='请输入您要发布活动的特色~'
+       placeholder-class='phactive'
+       maxlength="200"
+       value='{{depict}}'
+       bindinput='depictchange'></textarea>
+    </view>
+
+      <view class='xieyi'>
+        <view class='choosestatus' bindtap='agreenfun'>
+          <image src='/images/choose.svg' wx:if="{{agreen}}"></image>
+          <image src='/images/notchoose.svg' wx:if="{{!agreen}}"></image>
+        </view>
+        我同意
+        <navigator url='/pages/serveragreement/index' class='xieyitit'>《聚聚服务协议》</navigator>
+      </view>
+
+  </view>
+</view>
+<view class='push' bindtap='pushbtn'>
+  <view class='push-btn'>发布</view>
+</view>
+
+<van-action-sheet show="{{addresschoose}}" actions="{{activeaddress}}" bind:close="Closechoose" bind:select="Openchoose" />
+
+
+<van-action-sheet show="{{choosetime}}">
+  <van-datetime-picker
+    type="datetime"
+    min-date="{{minDate}}"
+    bind:confirm="confirmtime"
+    bind:cancel="canceltime" 
+  />
+</van-action-sheet>
+
+<van-toast id="van-toast" />

@@ -1,0 +1,131 @@
+.nobtmborder{
+  border-bottom: none!important;
+}
+.concent{
+  background: rgba(151,169,184,0.08);
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.mine-box{
+  margin: 150rpx 20rpx 0rpx;
+  background: #fff;
+  box-shadow: 2rpx 2rpx 20rpx rgba(0,0,0,.1);
+  border-radius: 10rpx;
+}
+.mine-head{
+  width: 100%;
+  height: 280rpx;
+  float: left;
+  margin-top: -75rpx;
+  border-bottom: #eaeef1 solid 1rpx;
+}
+.headimg{
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px rgba(0,0,0,.1);
+  position: relative;
+  overflow: hidden;
+}
+.nickname{
+  display: block;
+  width: 100%;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+.nickname text{
+color: #666666;
+}
+.mine-nav{
+  width: 94%;
+  height: auto;
+  float: left;
+  padding-left: 6%;
+  border-bottom: #eaeef1 solid 1px;
+}
+.line{
+  height: auto;
+  min-height: 80rpx;
+  border-bottom: #eaeef1 solid 1px;
+}
+.line:last-child{
+  border-bottom: none;
+}
+.line text{
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #4f5961;
+}
+.mine-nav navigator image{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin: 25rpx;
+}
+.line .line-label{
+  width:30%; 
+  height: 79rpx;
+  line-height: 79rpx;
+  float: left;
+  color: #97A9B8;
+}
+.line-input{
+  width: 70%;
+  font-size: 30rpx;
+  float: left;
+  color: #000000;
+}
+.nav-item{
+  margin: 0 20rpx;
+  background: #fff;
+}
+.nav-item .line{
+  width: 88%;
+  margin-left:6%; 
+}
+.line-title{
+  border-bottom: none;
+  padding-left: 4%;
+ background: rgba(151,169,184,0.08);
+}
+.line-title .line-label{
+  font-size: 26rpx;
+  line-height: 100rpx!important;
+  color: #97A9B8!important;
+}
+.biaoqian .line{
+  min-height: 120rpx;
+  padding:20rpx 0; 
+}
+ .biaoqian{
+   margin-bottom: 100rpx;
+ }
+.action{
+  display: flex;
+  margin-right: 25rpx;
+  justify-content: right;
+  float: right;
+}
+.action image{
+  width: 60rpx!important;
+  height: 60rpx!important;
+  margin: 10rpx 5rpx!important;
+  border-radius: 10rpx;
+}
+.action-icon{
+width: auto;
+height: 60rpx;
+line-height: 60rpx;
+margin: 10rpx;
+}
+.line-input .navigator-hover{
+  background:#fff;
+}
+.xuanyan{
+  line-height: 70rpx!important;
+}

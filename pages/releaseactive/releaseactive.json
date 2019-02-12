@@ -1,0 +1,14 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "发布动态",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "labeltag": "/components/label/label",
+    "van-field": "/vant/field/index",
+    "van-icon": "/vant/icon/index",
+    "van-action-sheet": "/vant/action-sheet/index",
+    "van-toast": "/vant/toast/index"
+  }
+}

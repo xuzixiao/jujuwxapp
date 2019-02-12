@@ -1,0 +1,5 @@
+<view class='feedback'>
+  <textarea placeholder="请输入您的意见反馈" placeholder-style="color:#bfbfbf;font-size:30rpx; line-height: 60rpx;" maxlength="200" bindinput='fankuitext'/>
+  <view class='fontsize'>{{nowsize}}/{{fontsize}}字符</view>
+  <button class='save submit' bindtap='submit'>提交反馈</button>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "消息",
+  "usingComponents": {
+    "van-icon": "/vant/icon/index",
+    "infolist": "/components/pldetailinfo/infolist",
+    "unreadtip": "/components/unreadtip/unreadtip"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-action-sheet": "/vant/action-sheet/index",
+    "van-datetime-picker": "/vant/datetime-picker/index",
+    "van-toast": "/vant/toast/index"
+  }
+}

@@ -1,0 +1,104 @@
+<view class='mine-box'>
+<view class='mine-head'>
+<view class='headimg'>
+  <image src='{{userinfo.avatarUrl}}' class='headimg'></image>
+  <view class='changheadimg' bindtap='updateimgfun'>
+  <image src='/images/photo.svg'></image>
+  </view>
+</view>
+  <view class='nickname' bindtap='updateusernamefun'><text>{{userinfo.nickName}}</text><image src='/images/update.svg' class='update'></image></view>
+</view>
+
+<view class="mine-nav">
+  <view class='line'>
+    <text class='line-label'>所在地</text>
+    <input class="line-input" auto-focus placeholder="请输入当前所在地" value='{{userinfo.region}}' placeholder-class="place-holder" bindinput='szd' />
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>常喝的酒类</text>
+    <input class="line-input" auto-focus placeholder="请输入喜欢喝的酒类" value='{{userinfo.oftenDrinkAlcohol}}' bindinput='chdj' placeholder-class="place-holder" />
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>蹦迪的场所</text>
+    <input class="line-input" auto-focus placeholder="请输入经常去的场所" value='{{userinfo.oftenDiscoPlace }}' bindinput='bdcs' placeholder-class="place-holder" />
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>经常出没地</text>
+    <input class="line-input" auto-focus placeholder="请输入经常去的城市" value='{{userinfo.oftenRegion }}' bindinput='cmd' placeholder-class="place-holder" />
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>蹦迪宣言</text>
+    <input class="line-input" auto-focus placeholder="请输入蹦迪宣言" value='{{userinfo.discoDeclaration }}' bindinput='bdxy' placeholder-class="place-holder" />
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>我的标签</text>
+        <labeltag wx:for="{{userinfo.labels}}" wx:key="" text="{{item.text}}" color="{{item.textColor}}" background="{{item.backgroundColor}}"></labeltag>
+        <!-- <text wx:for="{{userinfo.labels}}" wx:key="" style='color:{{item.textColor}};background:{{item.backgroundColor}}'>{{item.text}}</text> -->
+   
+
+
+    <view class='addlabel' bindtap='addlabelbtn'><image src='/images/add.svg'></image></view>
+  </view>
+</view>
+<view class='clear'></view>
+</view>
+<button class='save' bindtap='seve'>保存</button>
+
+<!-- 添加我的标签窗口 -->
+<view class='openwin' wx:if="{{addlabel}}">
+<view class='win-con'>
+  <view class='win-title'>
+  <text>添加我的标签</text>
+  <image src='/images/close.svg' class='close' bindtap='closewin' auto-focus="true"></image>
+  </view>
+  <view class='win-mian'>
+    <input type='text' class='inputtext' bindinput='labelval' ></input>
+  </view>
+  <view class='win-handle'>
+    <button class='cancel'  bindtap='closewin'>取消</button>
+    <button class='confirm' bindtap='addtips'>添加</button>
+  </view>
+</view>
+</view>
+<!-- 修改用户名窗口 -->
+<view class='openwin' wx:if="{{usernamewin}}">
+<view class='win-con'>
+  <view class='win-title'>
+  <text>修改用户名</text>
+  <image src='/images/close.svg' class='close' bindtap='closewin'></image>
+  </view>
+  <view class='win-mian'>
+    <input type='text' class='inputtext' bindinput='usernametext' value='{{userinfo.nickName}}' id='username' auto-focus="true"></input>
+  </view>
+  <view class='win-handle'>
+    <button class='cancel' bindtap='closewin'>取消</button>
+    <button class='confirm' bindtap='updateusername'>修改</button>
+  </view>
+</view>
+</view>
+
+<!-- 修改头像窗口 -->
+<view class='openwin' wx:if="{{userimgwin}}">
+<view class='win-con'>
+  <view class='win-title'><text>修改头像</text>
+  <image src='/images/close.svg' class='close' bindtap='closewin'></image>
+  </view>
+  <view class='win-mian'>
+   <image src='{{userheadimg}}' class='updateheadimg'></image>
+  </view>
+  <view class='win-upload-btn'>
+   <button bindtap='chooseImage'>选择图片</button>
+  </view>
+  <view class='win-handle'>
+    <button class='cancel' bindtap='closewin'>取消</button>
+    <button class='confirm' bindtap='updateheadimgfun'>修改</button>
+  </view>
+</view>
+</view>
+
+

@@ -1,0 +1,34 @@
+.unreadtip{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top:10px
+}
+.unreadtip navigator{
+  box-shadow: 0 0 15rpx rgba(0,0,0,.2);
+  padding: 10rpx 20rpx;
+  float: left;
+  border-radius: 10rpx;
+}
+.unreadtip image{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 5rpx rgba(0,0,0,.2);
+  float: left;
+}
+.unreadtip navigator span{
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  float: left;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+  color: #666666;
+}
+.readnexticon{
+  font-size: 26rpx!important;
+  line-height: 50rpx;
+  color: #666666;
+  opacity: 0.5;
+}

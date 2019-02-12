@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class='infor'>
+<!-- 未读 -->
+<unreadtip wx:if="{{havenew}}"></unreadtip>
+<!-- 动态列表 -->
+<view class='info-main'>
+  <infolist
+   wx:for="{{infolist}}"
+   infordata="{{item}}"
+   openid="{{openid}}"
+   lat="{{userlocaltion.lat}}"
+   lon="{{userlocaltion.lon}}"
+   wx:key="index"
+   ></infolist>
+
+ <view class='zanwu' wx:if="{{nodata}}">
+    <view><van-icon name="fail" size='30px' /></view>
+    <view class='zanwuinfo'>当前地区暂无动态</view>
+ </view>
+   
+   <view class='loading' wx:if="{{xialaload}}">
+      <van-loading size="20px" color="#666666" wx:if="{{!nothave}}"/>
+      <text class='loadtext' wx:if="{{nothave}}">没有更多了</text>
+   </view>
+</view>
+
+<view class='issue' bindtap='push'>
+  <image src='/images/issue.png'></image>
+  <button></button>
+</view>
+
+</view>

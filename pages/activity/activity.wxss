@@ -1,0 +1,48 @@
+.activity{
+  padding: 10px;
+  background:#f2f2f2;
+  height: 100%;
+}
+.issue{
+  width: 130rpx;
+  height: 130rpx;
+  /* background: #ddd; */
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+}
+.issue image{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.issue button{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  left: 0;
+  top: 0;
+  z-index: 6;
+  opacity: 0;
+}
+.loading{
+  width: 100%;
+  height: 30px;
+  transition: all 0.3s linear;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  line-height: 30px;
+}
+.loadtext{
+  font-size:14px;
+  color: #666666; 
+  line-height: 30px;
+}

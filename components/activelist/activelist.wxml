@@ -1,0 +1,22 @@
+<view class='active-list'>
+<navigator url="/pages/activedetail/activedetail?uuid={{activedata.uuid}}">
+  <view class='active-logo'>
+    <view class='tag ing' wx:if="{{activedata.status==1}}">进行中</view>
+    <view class='tag begin' wx:if="{{activedata.status==0}}">未进行</view>
+    <view class='tag after' wx:if="{{activedata.status==2}}">已结束</view>
+    <image src='{{activedata.coverUrl}}'></image>
+  </view>
+  <view class='active-info'>
+  <view class='activetit'>{{activedata.theme}}</view>
+    <view class='activeaddress'>
+      <image src='/images/address.jpg' class='icon'></image>
+      <text>{{activedata.place}}</text>
+    </view>
+    <view class='activedate'>
+    <image src='/images/date.jpg'  class='icon'></image>
+      <text>11-11 </text><text> 周五</text>
+      <text>20:00</text>
+    </view>
+  </view>
+  </navigator>
+</view>

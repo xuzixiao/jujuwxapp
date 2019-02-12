@@ -1,0 +1,56 @@
+<view class='info-list'>
+  <view class='info-head'>
+    <image src='{{infordata.createUser.avatarUrl}}' class='headimg'></image>
+    <view class='userinfo'>
+      <view class='username'>{{infordata.createUser.nickName}}</view>
+      <view class='usrtap'>
+        <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
+        <labeltag text="测试标签" color="#1890FF" background="#BAE7FF"></labeltag>
+        <labeltag text="测试标签" color="#F759AC" background="#FFD5E7"></labeltag>
+      </view>
+    </view>
+  </view>
+  <!-- 说明文字 -->
+  <view class='infotext'>
+    <text>{{infordata.characters}}</text>
+  </view>
+  <!-- 轮播 -->
+  <view class='info-swipe'>
+
+  <view class='imgbox' wx:for="{{infordata.medias}}" wx:key="{{item.index}}"><image src="{{item.filePath}}" class="slide-image" mode="aspectFill" /></view>
+    
+  </view>
+
+  <!-- 操作信息 -->
+  <view class='infohand'>
+
+    <view class='infohand-line'>
+      <van-icon name="location" custom-class="location" />
+      <text>{{infordata.place}}</text>
+      <text>5.55km</text>
+    </view>
+
+    <view class='infohand-line'>
+      <text>5分钟前</text>
+      <text>{{infordata.browseNum}}浏览</text>
+      <text class='delthisinfo'>删除</text>
+    </view>
+
+    <view class='infohand-line'>
+      <view class='l-item'>
+        <van-icon name="like-o" size='12' custom-class="l-item-tb" bindtap='praise'/>
+        <text>{{infordata.praiseNum}} </text>
+      </view>
+
+      <view class='l-item'>
+        <van-icon name="chat" size='12' custom-class="l-item-tb" />
+        <text>{{infordata.commentNumAll}} </text>
+      </view>
+
+      <view class='l-item'>
+        <van-icon name="share" size='12' custom-class="l-item-tb" />
+        <text>0</text>
+      </view>
+    </view>
+  </view>
+</view>

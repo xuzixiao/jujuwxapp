@@ -1,0 +1,29 @@
+<view class='releaseactive'>
+<textarea placeholder='请输入要分享的主题...' class='releasetext' placeholder-class='releaseplace' maxlength='50' bindinput='releasetextfun'></textarea>
+<view class='wordlen'><text>{{wordlen}}~50字符</text></view>
+
+<view class='uploadimg'>
+ 
+ <view class='imgbox' wx:for="{{puactivedata.medias}}" wx:key='index'><image src='{{item.filePath}}' mode='aspectFit' wx:key="index"></image></view>
+  <view class='imgbox addbtn' bindtap='uploadimg'>
+    <image src='/images/add.jpg' mode='widthFix'></image>
+  </view>
+</view>
+<view class='location' bindtap='getlocaltion'>
+<van-icon name="location" class='locaicon' />
+<text>{{puactivedata.place==""?'你在哪儿呢？':puactivedata.place}}</text>
+<van-icon name="arrow" class='searchlocal' />
+</view>
+</view>
+
+
+<van-action-sheet
+  show="{{ showtypechoose }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+<van-toast id="van-toast" />
+
+<button class='save' bindtap='seve'>发布</button>
+

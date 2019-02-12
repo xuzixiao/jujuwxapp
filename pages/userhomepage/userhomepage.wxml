@@ -1,0 +1,76 @@
+<view class='concent'>
+<view class='mine-box'>
+<view class='mine-head'>
+<view class='headimg'>
+  <image src='{{createuser.avatarUrl}}' class='headimg'></image>
+</view>
+  <view class='nickname' bindtap='updateusernamefun'>
+    <text>{{createuser.nickName}}</text>
+  </view>
+</view>
+<view class="mine-nav">
+ <view class='line'>
+    <text class='line-label'>个人动态</text>
+    <view class="line-input">
+    <navigator class='action' url="/pages/myinfor/myinfor">
+        <image src='/images/infoimg.jpg '></image>
+        <image src='/images/infoimg.jpg '></image>
+        <image src='/images/infoimg.jpg '></image>
+        <van-icon name="arrow" class='action-icon' color="#666666" size="10px;" />
+    </navigator>
+    </view>
+  </view>
+</view>
+<view class='clear'></view>
+<view class='line line-title'>
+    <text class='line-label'>个人信息</text>
+</view>
+<view class='nav-item'>
+  <view class='line'>
+    <text class='line-label'>来自</text>
+    <text class="line-input">{{createuser.region}}</text>
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>常喝的酒类</text>
+     <text class="line-input">{{createuser.oftenDrinkAlcohol}}</text>
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>蹦迪的场所</text>
+    <text class="line-input">{{createuser.oftenDiscoPlace}}</text>
+  </view>
+
+  <view class='line'>
+    <text class='line-label'>经常出没地</text>
+    <text class="line-input">{{createuser.oftenRegion}}</text>
+  </view>
+
+  <view class='line nobtmborder'>
+    <text class='line-label'>蹦迪宣言</text>
+    <text class="line-input xuanyan">{{createuser.discoDeclaration}}</text>
+  </view>
+  <view class='clear'></view>
+</view>
+<view class='line line-title'>
+    <text class='line-label'>标签</text>
+</view>
+<view class='nav-item biaoqian'>
+  <view class='line'>
+    <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
+    <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
+    <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
+  </view>
+</view>
+
+
+</view>
+
+
+
+
+
+
+</view>
+
+

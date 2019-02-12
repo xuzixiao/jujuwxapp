@@ -1,0 +1,69 @@
+.infor{
+  margin: 10rpx 20rpx;
+}
+/* 动态列表 */
+.info-main{
+  margin-top: 20rpx;
+}
+/* 发布 */
+.issue{
+  width: 130rpx;
+  height: 130rpx;
+  /* background: #ddd; */
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+}
+.issue image{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.issue button{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  left: 0;
+  top: 0;
+  z-index: 6;
+  opacity: 0;
+}
+.loading{
+  width: 100%;
+  height: 30px;
+  transition: all 0.3s linear;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.loadtext{
+  font-size:14px;
+  color: #666666; 
+  line-height: 30px;
+}
+.zanwu{
+  width: 100%;
+  height: 80px;
+  margin: 50px auto;
+}
+.zanwu view{
+  text-align: center;
+}
+.zanwuinfo{
+  line-height: 40px;
+  font-size: 14px;
+  color: #666666;
+}
+
+
+
+
+
+

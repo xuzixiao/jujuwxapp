@@ -1,0 +1,12 @@
+<view class="pushsuccess">
+<image src='/images/pushsuccess.svg'></image>
+<view class='line-success-text'>恭喜您发布成功</view>
+<view class='line-tip'>把活动分享给伙伴，可以让你的活动人气更多哦！</view>
+<view class='btn'>
+  <button class='share'>分享小伙伴</button>
+  <navigator url='/pages/infor/infor'>
+  <button class='backindex'>返回首页</button>
+  </navigator>
+</view>
+
+</view>

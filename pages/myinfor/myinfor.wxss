@@ -1,0 +1,47 @@
+.myinfor{
+  height: 120rpx;
+  border-bottom: 1px solid rgba(151,169,184,0.12);
+  padding: 10px 20px;
+}
+.myinfor .info-head{
+  height: 128rpx;
+  display: flex;
+}
+.myinfor .headimg{
+  display: block;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.myinfor .userinfo{
+float: left;
+margin-left: 38rpx;
+}
+.username{
+  font-size: 36rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #666666;
+}
+.usrtap{
+  width: 100%;
+  height: 58rpx;
+  overflow: hidden;
+  padding-top: 10rpx;
+}
+.infotext{
+  padding: 15rpx 0;
+}
+.infotext text{
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #666666;
+  text-align: justify;
+}
+
+.userinforlength{
+  font-size: 14px;
+  color: #97A9B8; 
+  line-height:68rpx;
+}
+

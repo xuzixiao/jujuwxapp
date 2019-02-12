@@ -1,0 +1,48 @@
+.about{
+  border-top: #f2f4f6 solid 1px;
+}
+.logo{
+  width: 200rpx;
+  height: auto;
+  margin: 0px auto;
+  padding-top: 85rpx;
+}
+.logo image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.logo text{
+  display: block;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  color: #35cfc9;
+  font-size: 45rpx;
+  line-height: 100rpx;
+  font-weight: 500;
+}
+.about-text{
+  display: block;
+  width: 80%;
+  margin: 0 10%;
+  font-size: 30rpx;
+  text-indent: 2em;
+  line-height: 50rpx;
+  text-align: justify;
+  color: #5a5a5a;
+}
+.slogan{
+  color: #37d0ca;
+  display: block;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 50rpx;
+  left: 0rpx;
+} 
+
+
+
+

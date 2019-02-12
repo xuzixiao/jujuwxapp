@@ -1,0 +1,62 @@
+.information{
+  padding: 0 20rpx;
+}
+.info-list{
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid rgba(151,169,184,0.12);
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  padding: 20rpx 0px;
+}
+.info-list .userheadimg{
+  width: 13%;
+  height: 100rpx;
+  border-radius: 100rpx;
+  overflow: hidden;
+}
+.info-list .userheadimg image{
+  width: 100%;
+  height: 100%;
+}
+.infodetail{
+  width: 65%;
+}
+.action-img{
+  width: 18%;
+  display: flex;
+  justify-content: right;
+}
+.action-img image{
+  display: inline-block;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 10rpx;
+}
+.nickname{
+  font-size: 14px;
+  color: #222222;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+.nicktext{
+  font-size: 13px;
+  line-height: 50rpx;
+  color: #000;
+}
+.outmin{
+  color: #97A9B8;
+  font-size: 13px;
+  line-height: 50rpx;
+}
+.notmore{
+font-family: PingFangSC-Regular;
+font-size: 12px;
+color: #97A9B8;
+text-align: center;
+padding: 10px 0px;
+}
+
+
+

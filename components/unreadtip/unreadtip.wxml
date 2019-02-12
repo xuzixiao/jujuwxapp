@@ -1,0 +1,7 @@
+<view class='unreadtip'>
+  <navigator to="">
+    <image src='/images/logo.png'></image>
+    <span>3条未读</span>
+    <van-icon name="arrow" custom-class="readnexticon" />
+  </navigator>
+</view>

@@ -1,0 +1,31 @@
+.joinlist{
+  height: auto;
+  margin: 0 10px;
+}
+.joinlist-line{
+  width: 100%;
+  height: 60px;
+  border-bottom:1px solid rgba(151,169,184,0.12);
+}
+.joinlist-line .headimg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+  float: left;
+}
+.joinlist-line text{
+  line-height: 60px;
+  height: 60px;
+  font-size: 14px;
+} 
+.outtime{
+  font-size: 13px;
+  color: #97A9B8;
+  float: right;
+  margin-right: 10PX;
+}
+.username{
+  margin-left: 30px;
+  color: #222222;
+}

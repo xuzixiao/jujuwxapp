@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-icon": "/vant/icon/index",
+    "infolist": "/components/infolist/infolist",
+    "unreadtip":"/components/unreadtip/unreadtip",
+    "van-loading": "/vant/loading/index"
+  }
+}

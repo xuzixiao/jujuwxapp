@@ -1,0 +1,15 @@
+<view class='myinfor'>
+  <view class='info-head'>
+    <image src='/images/headimg.jpg' class='headimg'></image>
+    <view class='userinfo'>
+      <view class='username'>我叫小仙女</view>
+      <view class='userinforlength'>1条动态</view>
+    </view>
+  </view>
+</view>
+
+<view class='myinforlist'>
+<infolist></infolist>
+</view>
+
+
