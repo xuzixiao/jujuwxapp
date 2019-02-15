@@ -57,6 +57,7 @@ margin-left: 38rpx;
   overflow: hidden;
   display: flex;
   align-content:center;
+  cursor:default;
 }
 .info-swipe .imgbox:nth-child(3n){
   margin-right: 0px;
@@ -99,4 +100,42 @@ margin-left: 38rpx;
 }
 .infohand-line .l-item text{
   float: left;
+}
+.slide-video{
+  width: 100%;
+  height: 100%;
+}
+.yulanbox{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, .4);
+  z-index: 10;
+}
+.yulan{
+  width: 100%;
+  height: 300px;
+  position: fixed;
+  top: 20%;
+  left: 0px;
+  z-index: 11;
+}
+.yulan image{
+  width: 100%;
+}
+.outlook{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: #BAE7FF;
+  color: #1890FF;
+  text-align: center;
+  font-size: 14px;
+  position: fixed;
+  top: 21%;
+  right: 15px;
+  z-index: 12;
+  border-radius: 50%;
 }

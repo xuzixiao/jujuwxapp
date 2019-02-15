@@ -97,3 +97,7 @@
   bottom: 0px;
   border:none;
 }
+.myVideo{
+  width: 100%;
+  height: auto;
+}

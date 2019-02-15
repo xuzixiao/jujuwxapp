@@ -14,8 +14,9 @@
     </view>
     <view class='activedate'>
     <image src='/images/date.jpg'  class='icon'></image>
-      <text>11-11 </text><text> 周五</text>
-      <text>20:00</text>
+      <text>{{date}}</text>
+      <text> {{week}}</text>
+      <text> {{time}}</text>
     </view>
   </view>
   </navigator>

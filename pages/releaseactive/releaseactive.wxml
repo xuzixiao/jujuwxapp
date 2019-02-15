@@ -3,8 +3,13 @@
 <view class='wordlen'><text>{{wordlen}}~50字符</text></view>
 
 <view class='uploadimg'>
- 
- <view class='imgbox' wx:for="{{puactivedata.medias}}" wx:key='index'><image src='{{item.filePath}}' mode='aspectFit' wx:key="index"></image></view>
+
+ <view class='imgbox' wx:for="{{puactivedata.medias}}" wx:key='index'>
+  <image src='{{item.filePath}}' wx:if="{{item.fileType=='0'}}" mode='aspectFit' wx:key="index"></image>
+  <video class='imgbox' class="myVideo"  controls='false' src="{{item.filePath}}" wx:if="{{item.fileType=='1'}}">
+  </video>
+ </view>
+
   <view class='imgbox addbtn' bindtap='uploadimg'>
     <image src='/images/add.jpg' mode='widthFix'></image>
   </view>

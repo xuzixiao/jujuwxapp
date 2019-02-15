@@ -12,7 +12,9 @@ Page({
     pltext:"",
     userlng:"",
     userlat:"",
-    commentlist:[]
+    commentlist:[],
+    outtime:"",
+    distance:""
   },
 
   /**
@@ -27,7 +29,9 @@ Page({
       success: function (res) {
         that.setData({
           openId: res.data,
-          uuid: options.uuid
+          uuid: options.uuid,
+          distance: options.distance,
+          outtime: options.outtime
         })
         that.getcomtentlist(res.data, options.uuid);
       },

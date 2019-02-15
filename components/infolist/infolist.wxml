@@ -1,5 +1,5 @@
 <view class='info-list'>
-<navigator url="/pages/userhomepage/userhomepage?uuid={{infordata.uuid}}">
+<navigator url="/pages/userhomepage/userhomepage?uuid={{infordata.uuid}}&distance={{distance}}&outtime={{outtime}}">
   <view class='info-head'>
     <image src='{{infordata.createUser.avatarUrl}}' class='headimg'></image>
     <view class='userinfo'>
@@ -13,7 +13,7 @@
   </view>
   </navigator>
   <!-- 说明文字 -->
-  <navigator url="/pages/pldetail/pldetail?uuid={{infordata.uuid}}">
+  <navigator url="/pages/pldetail/pldetail?uuid={{infordata.uuid}}&distance={{distance}}&outtime={{outtime}}">
     <view class='infotext'>
       <text>{{infordata.characters}}</text>
     </view>
@@ -21,8 +21,12 @@
     <view class='info-swipe'>
       <swiper class="swiper" indicator-dots="true"  interval="5000" duration="500" indicator-color="#EDEDED" indicator-active-color="#B5F5EC">
         <block wx:for="{{infordata.medias}}" wx:key="index">
-          <swiper-item>
+          <swiper-item wx:if="{{item.fileType=='0'}}">
             <image src="{{item.filePath}}" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+          <swiper-item wx:if="{{item.fileType=='1'}}">
+            <video class="slide-image" mode="aspectFill" controls='false' src="{{item.filePath}}">
+            </video>
           </swiper-item>
         </block>
       </swiper>

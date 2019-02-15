@@ -1,5 +1,6 @@
 // components/infolist/infolist.js
 const app = getApp();
+import util from '../../utils/util.js';
 Component({
   /**
    * 组件的属性列表
@@ -10,6 +11,12 @@ Component({
     },
     'openId':{
       type:String
+    },
+    'distance': {
+      type: String
+    },
+    'outtime': {
+      type: String
     }
   },
 
@@ -17,7 +24,12 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    infordata:"",
+    openId:"",
+    outtime:"",
+    distance:"",
+    showBimg:false,
+    bimgindex:0
   },
 
   /**
@@ -38,8 +50,32 @@ Component({
           console.log(res);
         }
       })
+    },
+    //时间间隔
+    timecell:function(){
+      let outtime = util.timecell(this.properties.infordata.createTime);
+      this.setData({
+        outtime: outtime
+      })
+    },
+    //距离间隔
+    julijiange:function(){
+      debugger;
+      var juli = util.getrange(this.properties.infordata.lat, this.properties.infordata.lng, this.properties.lat, this.properties.lon);
+    },
+    //关闭预览
+    closeoutlook:function(){
+      this.setData({
+        showBimg:false
+      })
+    },
+    //打开预览
+    showbigimglook:function(e){
+      let imgindex = e.currentTarget.dataset.imgindex;
+      this.setData({
+        bimgindex: imgindex,
+        showBimg: true
+      })
     }
-    
-
   }
 })

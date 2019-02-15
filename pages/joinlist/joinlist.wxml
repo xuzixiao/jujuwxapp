@@ -1,25 +1,16 @@
 <view class='joinlist'>
 
-<view class='joinlist-line'>
-  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
-  <text class='username'>一路同行</text>
-  <text class='outtime'>5分钟前</text>
+<view class='joinlist-line' wx:for="{{userjoinlist}}" wx:key="{{index}}">
+  <image src='{{item.avatarUrl}}'  class='headimg'></image>
+  <text class='username'>{{item.nickName}}</text>
+  <text class='outtime'>{{item.outtime}}</text>
 </view>
-<view class='joinlist-line'>
-  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
-  <text class='username'>一路同行</text>
-  <text class='outtime'>5分钟前</text>
+
+<view wx:if="{{userjoinlist.length==0}}" class='notjoin'>
+暂无
 </view>
-<view class='joinlist-line'>
-  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
-  <text class='username'>一路同行</text>
-  <text class='outtime'>5分钟前</text>
-</view>
-<view class='joinlist-line'>
-  <image src='/images/headimg.jpg' mode='widthFix' class='headimg'></image>
-  <text class='username'>一路同行</text>
-  <text class='outtime'>5分钟前</text>
-</view>
+
+
 
 
 

@@ -9,7 +9,19 @@
 </view>
 
 <view class='myinforlist'>
-<infolist></infolist>
+<infolist
+   wx:for="{{infolist}}"
+   infordata="{{item}}"
+   openid="{{openid}}"
+   lat="{{userlocaltion.lat}}"
+   lon="{{userlocaltion.lon}}"
+   wx:key="index"
+   ></infolist>
 </view>
+
+   <view class='loading' wx:if="{{xialaload}}">
+      <van-loading size="20px" color="#666666" wx:if="{{!nothave}}"/>
+      <text class='loadtext' wx:if="{{nothave}}">没有更多了</text>
+   </view>
 
 

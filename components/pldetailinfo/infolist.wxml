@@ -16,8 +16,10 @@
   </view>
   <!-- 轮播 -->
   <view class='info-swipe'>
-
-  <view class='imgbox' wx:for="{{infordata.medias}}" wx:key="{{item.index}}"><image src="{{item.filePath}}" class="slide-image" mode="aspectFill" /></view>
+  <view class='imgbox' wx:for="{{infordata.medias}}" wx:key="{{item.index}}" bindtap='showbigimglook' data-imgindex="{{item.index}}">
+    <image src="{{item.filePath}}" class="slide-image" mode="aspectFill" wx:if="{{item.fileType=='0'}}"/>
+    <video class="slide-video" mode="aspectFill" show-center-play-btn='false' controls='false' src="{{item.filePath}}" wx:if="{{item.fileType=='1'}}"></video>
+  </view>
     
   </view>
 
@@ -27,11 +29,11 @@
     <view class='infohand-line'>
       <van-icon name="location" custom-class="location" />
       <text>{{infordata.place}}</text>
-      <text>5.55km</text>
+      <text>{{distance}}</text>
     </view>
 
     <view class='infohand-line'>
-      <text>5分钟前</text>
+      <text>{{outtime}}</text>
       <text>{{infordata.browseNum}}浏览</text>
       <text class='delthisinfo'>删除</text>
     </view>
@@ -54,3 +56,17 @@
     </view>
   </view>
 </view>
+
+<view class='yulanbox' wx:if="{{showBimg}}">
+<swiper class='yulan' current="{{bimgindex}}">
+  <block wx:for="{{infordata.medias}}" wx:key="{{item.index}}">
+    <swiper-item>
+      <image src="{{item.filePath}}" class="slide-image" wx:if="{{item.fileType=='0'}}"/>
+       <video class="slide-video" mode="aspectFill" src="{{item.filePath}}"
+    wx:if="{{item.fileType=='1'}}"></video>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='outlook' bindtap='closeoutlook'>×</view>
+</view>
+

@@ -1,18 +1,27 @@
 // pages/joinlist/joinlist.js
+const app = getApp();
+import utils from "../../utils/util.js";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    uuid:"",
+    userjoinlist:[],
+    outtime:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.joinpeople(options.uuid);
+    this.setData({
+      uuid: options.uuid
+    })
+    
   },
 
   /**
@@ -33,7 +42,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      userjoinlist:[],
+    })
   },
 
   /**
@@ -48,6 +59,40 @@ Page({
    */
   onPullDownRefresh: function () {
 
+  },
+  joinpeople: function (uuid) {
+    var that = this;
+    wx.request({
+      url: app.requesturl + 'payUser/findByPageOnActivity?uuid=' + uuid,
+      method: "POST",
+      data: {
+        uuid: uuid
+      },
+      success: function (res) {
+        if (res.data.code == "100") {
+            let joinlen=res.data.data.length;
+            let joindata = res.data.data;
+            if(joinlen!=0){
+              for (let i = 0; i<joinlen;i++){
+                let outtime = utils.timecell(joindata[i].createTime);
+                joindata[i].outtime = outtime
+              }
+              that.setData({
+                userjoinlist: joindata
+              })
+              return;
+            }
+            that.setData({
+              userjoinlist: []
+            })
+
+
+
+
+         
+        }
+      }
+    })
   },
 
   /**

@@ -1,6 +1,6 @@
 <view class='pldetail'>
   <view class='infor'>
-    <infolist infordata="{{pldata}}" openId="{{openId}}"></infolist>
+    <infolist infordata="{{pldata}}" openId="{{openId}}" distance="{{distance}}" outtime="{{outtime}}"></infolist>
   </view>
   <view class='plcon'>
     <view class='plcount'>

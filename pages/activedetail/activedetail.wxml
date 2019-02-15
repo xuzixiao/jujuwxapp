@@ -1,18 +1,18 @@
 <view class='activedetail'>
   <view class='banner'>
-      <view class='state' wx:if="{{activedetail.status==1}}">进行中</view>
-      <view class='state' wx:if="{{activedetail.status==2}}">已结束</view>
-      <view class='state' wx:if="{{activedetail.status==0}}">未进行</view>
+      <view class='state ing' wx:if="{{activedetail.status==1}}">进行中</view>
+      <view class='state after' wx:if="{{activedetail.status==2}}">已结束</view>
+      <view class='state begin' wx:if="{{activedetail.status==0}}">未进行</view>
       <image src='{{activedetail.coverUrl}}' mode='widthFix'></image>
   </view>
   <view class='main'>
   <!-- 发起人板块 -->
 
 <view class='Originator'>
-  <image src='{{activedetail.coverUrl}}' mode='widthFix' class='originheadimg'></image>
+  <image src='{{activedetail.coverUrl}}' class='originheadimg'></image>
   <view class='originator-main'>
     <view>发起人：{{activedetail.createUser}}</view>
-    <view>发起时间：2018-12-22 10：00 星期四</view>
+    <view>发起时间：{{date}} {{week}}</view>
     <view>电话：{{activedetail.createUserPhone}}</view>
     <view>微信：{{activedetail.createUserWechatNumber}}</view>
   </view>
@@ -28,10 +28,9 @@
   </view>
   </view>
   <view class='line'><text class='tit'>活动描述</text><text class='concent'>{{activedetail.depict}}</text></view>
-  <view class='line' bindtap='joinlist'><text class='tit'>参与（10）</text><text  class='concent bidixs'>蹦迪选手</text><image src='/images/next.svg' class='more'></image></view>
+  <view class='line' bindtap='joinlist'><text class='tit'>参与（{{userjoinlist.length}}）</text><text  class='concent bidixs'>蹦迪选手</text><image src='/images/next.svg' class='more'></image></view>
   <view class='line xuanshou'>
-      <image src='/images/headimg.jpg' mode='widthFix' class='userimg'></image>
-      <image src='/images/headimg.jpg' mode='widthFix' class='userimg'></image>
+      <image  wx:for="{{userjoinlist}}" wx:key="{{item.index}}" src='{{item.avatarUrl}}' class='userimg'></image>
   </view>
 </view>
 </view>
@@ -39,8 +38,8 @@
 
 
 <view class='fixedbtn'>
-  <view class='btn' bindtap='wantjoin'>我想参与</view>
-  <view class='btn'>分享活动</view>
+  <button class='btn' bindtap='wantjoin'>我想参与</button>
+  <button class='btn' open-type="share">分享活动</button>
 </view>
 
 <van-toast id="van-toast" />

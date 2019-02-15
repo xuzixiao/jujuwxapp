@@ -1,4 +1,5 @@
 // components/infolist/infolist.js
+import util from '../../utils/util.js';
 Component({
   /**
    * 组件的属性列表
@@ -31,20 +32,8 @@ Component({
    */
   methods: {
     getouttime:function(){
-      var datetime = new Date(this.properties.infordata.createTime).getTime();
-      var outtime = new Date().getTime() - datetime;
-      var minutes = new Date(outtime).getMinutes();
-      var hours = new Date(outtime).getHours();
-      var days = hours / 24;
-      //console.log(days, hours, minutes);
-      if (days > 1) {
-        outtime = parseInt(days) + "天前";
-      } else if (hours > 1) {
-        outtime = parseInt(hours) + "小时前";
-      } else {
-        outtime = parseInt(minutes) + "分钟前";
-      }
-      this.setData({
+      let outtime = util.timecell(this.properties.infordata.createTime);
+       this.setData({
         outtime: outtime
       })
     },
@@ -58,24 +47,14 @@ Component({
           showdel: false
         })
       }
-    },
-    getdistance: function (la1, lo1, la2, lo2){
-        var La1 = la1 * Math.PI / 180.0;
-        var La2 = la2 * Math.PI / 180.0;
-        var La3 = La1 - La2;
-        var Lb3 = lo1 * Math.PI / 180.0 - lo2 * Math.PI / 180.0;
-        var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)));
-        s = s * 6378.137; //地球半径
-        s = (Math.round(s * 10000) / 10000).toFixed(2);
-        return s
     }
   },
   ready:function(){
     this.getouttime();
-    this.showdelfun();
-    var juli = this.getdistance(this.properties.infordata.lat, this.properties.infordata.lng, this.properties.lon, this.properties.lat);
+    this.showdelfun()
+    var juli = util.getrange(this.properties.infordata.lat, this.properties.infordata.lng, this.properties.lat, this.properties.lon);
     this.setData({
-      distance: juli+"km"
+      distance: juli+" km"
     })
   }
 })

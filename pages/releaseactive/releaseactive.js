@@ -111,10 +111,9 @@ Page({
     this.setData({
       showtypechoose:false
     })
-    
+    var that = this;
+    initQiniu(that);
     if(event.detail.typeid==1){
-      var that = this;
-      initQiniu(that);
       wx.chooseImage({//上传图片
         success: function(res) {
           //初始化七牛
@@ -146,7 +145,26 @@ Page({
     }else if(event.detail.typeid==2){
       wx.chooseVideo({//上传视频
         success:function(res){
-          console.log(res);
+          var fillpaths = res.tempFilePath;
+          console.log(fillpaths);
+          qiniuUploader.upload(fillpaths, (res) => {
+            console.log(res);
+            let imggroup = {
+              "filePath": res.imageURL,
+              "fileType": "1",
+              "index": that.data.puactivedata.medias.length + 1,
+            }
+            that.setData({
+              'puactivedata.medias': that.data.puactivedata.medias.concat(imggroup)
+            })
+          }, (error) => {
+            console.error('error: ' + JSON.stringify(error));
+          }, null, (progress) => {
+            console.log('上传进度', progress.progress)
+            console.log('已经上传的数据长度', progress.totalBytesSent)
+            console.log('预期需要上传的数据总长度', progress.totalBytesExpectedToSend)
+          }, cancelTask => that.setData({ cancelTask })
+          );
         }
       })
     }

@@ -31,6 +31,7 @@
   display: flex;
   border-radius: 4px;
   box-shadow: 0px 0px 3px rgba(0,0,0,.1);
+  padding: 4px 0px;
 }
 .originheadimg{
   width: 60px;
@@ -42,8 +43,8 @@
   margin-top: 10px;
 }
 .originator-main view{
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 28px;
   color: #666666;
 }
 .fixedbtn{
@@ -66,8 +67,9 @@
   border-radius: 0px!important;
   text-align: center;
   font-size: 16px;
-  border-right: #e1e6ea solid 1px;
+  /* border-right: #e1e6ea solid 1px; */
   box-sizing: border-box;
+  border: #ffffff solid 1px!important;
 }
 .fixedbtn .btn:nth-child(2n){
   border-right: 0px;
@@ -125,5 +127,13 @@ margin:5px 14px 5px 0px;
 border-radius: 50%;
 float: left
 }
-
+.ing{
+   background: rgba(245,33,45,0.80);
+}
+.begin{
+  background: rgba(0,0,0,0.52);
+}
+.after{
+  background: rgba(144,144,144,0.80);
+}
 

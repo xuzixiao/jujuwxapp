@@ -8,7 +8,10 @@ Page({
   data: {
     uuid:"",
     openId:"",
-    activedetail:{}
+    activedetail:{},
+    date:"",
+    week:"",
+    userjoinlist:[]
   },
 
   /**
@@ -38,6 +41,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.joinpeople();
 
   },
   getdetail:function(){
@@ -47,15 +51,33 @@ Page({
       method:"POST",
       success:function(res){
         if(res.data.code=="100"){
+          let week = new Date(res.data.data.createTime).getDay();
+          if (week == 1) {
+            week = "周一"
+          } else if (week == 2) {
+            week = "周二"
+          } else if (week == 3) {
+            week = "周三"
+          } else if (week == 4) {
+            week = "周四"
+          } else if (week == 5) {
+            week = "周五"
+          } else if (week == 6) {
+            week = "周六"
+          } else if (week == 7) {
+            week = "周日"
+          }
+          let createtime = res.data.data.createTime.replace("T"," ").split(".")[0];
+          createtime = createtime.substring(0, createtime.length-3);
           that.setData({
-            activedetail:res.data.data
+            activedetail: res.data.data,
+            date: createtime,
+            week: week
           })
         }
-        console.log(res);
       }
     })
   },
-
   openmap:function(){
     wx.openLocation({
       latitude: this.data.activedetail.lat,
@@ -79,8 +101,26 @@ Page({
   //参与列表
   joinlist:function(){
    wx.navigateTo({
-     url: "/pages/joinlist/joinlist",
+     url: "/pages/joinlist/joinlist?uuid="+this.data.uuid,
    })
+  },
+  //参与活动的人员列表
+  joinpeople:function(){
+    var that=this;
+    wx.request({
+      url: app.requesturl + 'payUser/findByPageOnActivity?uuid=' + this.data.uuid,
+      method:"POST",
+      data:{
+        uuid: this.data.uuid
+      },
+      success:function(res){
+        if(res.data.code=="100"){
+          that.setData({
+            userjoinlist:res.data.data
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面显示
@@ -121,6 +161,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: this.data.activedetail.theme,
+      path: '/pages/activedetail/activedetail?uuid='+this.data.uuid,
+      imageUrl: this.data.activedetail.coverUrl,
+      success: (res) => {
+        console.log(res);
+      }
+    }
   }
 })
