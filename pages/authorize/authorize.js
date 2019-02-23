@@ -49,13 +49,25 @@ Page({
                     key: 'loginstate',
                     data: true,
                   })
-                  // console.log(app.globalData.logintogo)
-                  // wx.redirectTo({
-                  //   url: app.globalData.logintogo,
-                  // })
-                  wx.navigateBack({
-                    delta: -1
-                  });
+                  wx.setStorage({
+                    key: 'userInfo',
+                    data: res.data.data,
+                  })
+                  app.globalData.userInfo = res.data.data;
+                  if (app.globalData.logintogo == "" || app.globalData.logintogo == null){
+                    wx.navigateBack({
+                      delta: -1
+                    });
+                  }else{
+                    wx.navigateTo({
+                      url: app.globalData.logintogo,
+                      fail:function(){
+                        wx.switchTab({
+                          url: app.globalData.logintogo,
+                        })
+                      }
+                    })
+                  }
                 } else if (res.data.code != 100){
                   wx.showModal({
                     content: res.data.code + res.data.msg,

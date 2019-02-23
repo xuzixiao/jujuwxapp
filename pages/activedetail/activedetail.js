@@ -29,6 +29,7 @@ Page({
         that.getdetail();
       },
       fail:function(){
+        app.globalData.logintogo = "/pages/activity/activity";
         wx.navigateTo({
           url: '/pages/authorize/authorize',
         })
@@ -87,11 +88,13 @@ Page({
   },
   //我想参与
   wantjoin:function(){
+    let that=this;
     wx.request({
       url: app.requesturl + '/activity/join?openId=' + this.data.openId + "&uuid=" + this.data.uuid,
       method:"POST",
       success:function(res){
         Toast.success('参与成功');
+        that.joinpeople();
       },
       fail:function(err){
         console.log(err);

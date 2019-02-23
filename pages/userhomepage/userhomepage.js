@@ -51,6 +51,12 @@ Page({
         })
         //获取用户信息
         that.getdetail(res.data,options.uuid);
+      },
+      fail:function(){
+        app.globalData.logintogo="/pages/infor/infor";
+        wx.navigateTo({
+          url: '/pages/authorize/authorize',
+        })
       }
     })
   },

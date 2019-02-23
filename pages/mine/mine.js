@@ -24,8 +24,6 @@ Page({
         that.setData({
           openid: res.data
         })
-        //获取用户信息
-        that.getuserInfo(res.data);
       },
       fail:function(){
         wx.navigateTo({
@@ -38,15 +36,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function () { 
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var that=this;
+    wx.getStorage({
+      key: 'userInfo',
+      success: function(res) {
+        var userInfo=res.data;
+        that.setData({
+          'userinfo.avatarUrl': userInfo.avatarUrl,
+          'userinfo.nickName': userInfo.nickName
+        })
+      },
+      fail:function(){
+        wx.navigateTo({
+          url: '/pages/authorize/authorize',
+        })
+      }
+    })
   },
 
   /**
@@ -55,43 +67,44 @@ Page({
   onHide: function () {
 
   },
-  //获取用户信息
-  getuserInfo: function (openId) {
-    let that = this;
-    wx.request({
-      url: app.requesturl + 'payUser/detail?openId=' + openId,
-      header: {
-        "Content-Type": "application/json"
-      },
-      method: 'POST',
-      data: {
-        openId: openId
-      },
-      success: function (res) {
-        if (res.data.code == "100") {
-          console.log(res);
-          let userdata = res.data.data;
-          that.setData({
-            "userinfo.avatarUrl": userdata.avatarUrl,
-            "userinfo.nickName": userdata.nickName
-          })
-        } else {
-          wx.showModal({
-            content: res.data.msg,
-          })
-        }
-        //console.log(res)
-      },
-      fail: function (res) {
-        wx.showToast({
-          title: '接口异常',
-        })
-      },
-      complete: function () {
+  // //获取用户信息
+  // getuserInfo: function (openId) {
+  //   let that = this;
+  //   wx.request({
+  //     url: app.requesturl + 'payUser/detail?openId=' + openId,
+  //     header: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     method: 'POST',
+  //     data: {
+  //       openId: openId
+  //     },
+  //     success: function (res) {
+  //       if (res.data.code == "100") {
+  //         console.log(res);
+  //         let userdata = res.data.data;
+  //         that.setData({
+  //           "userinfo.avatarUrl": userdata.avatarUrl,
+  //           "userinfo.nickName": userdata.nickName
+  //         })
+  //         app.globalData.userInfo=res.data.data;
+  //       } else {
+  //         wx.showModal({
+  //           content: res.data.msg,
+  //         })
+  //       }
+  //       //console.log(res)
+  //     },
+  //     fail: function (res) {
+  //       wx.showToast({
+  //         title: '接口异常',
+  //       })
+  //     },
+  //     complete: function () {
 
-      }
-    })
-  },
+  //     }
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面卸载
    */

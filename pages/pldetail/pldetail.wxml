@@ -1,6 +1,23 @@
 <view class='pldetail'>
   <view class='infor'>
-    <infolist infordata="{{pldata}}" openId="{{openId}}" distance="{{distance}}" outtime="{{outtime}}"></infolist>
+    <infolist infordata="{{pldata}}" openId="{{openId}}" distance="{{distance}}" outtime="{{outtime}}" bindshare="share"></infolist>
+    <view class='infohand-line'>
+      <view class='l-item' bindtap='praise'>
+        <van-icon name="like-o" size='12' color="{{dianzan?'#c00':'#97A9B8'}}" custom-class="l-item-tb"/>
+        <text>{{pldata.praiseNum}} </text>
+      </view>
+
+      <view class='l-item'>
+        <van-icon name="chat" size='12' color='#97A9B8' custom-class="l-item-tb" />
+        <text>{{pldata.commentNumAll}} </text>
+      </view>
+
+      <view class='l-item sharebtn'>
+        <van-icon name="share" size='12' color='#97A9B8' custom-class="l-item-tb" bindtap='share' />
+        <!-- <text>0</text> -->
+        <button class='sharebtnohide' open-type="share">分享活动</button>
+      </view>
+    </view>
   </view>
   <view class='plcon'>
     <view class='plcount'>
@@ -18,11 +35,11 @@
           <view class='pl-text'>
             {{item.characters}}
           </view>
-          <view class='pl-info'>
+          <!-- <view class='pl-info'>
             <text>5.5km</text>
             <text>8分钟前</text>
             <text class='delthispl'>删除</text>
-          </view>
+          </view> -->
       </view>
 
      

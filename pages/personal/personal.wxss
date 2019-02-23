@@ -68,7 +68,7 @@
   width: 60%;
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
   float: left;
 }
 .save{

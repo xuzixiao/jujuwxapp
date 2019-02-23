@@ -9,6 +9,7 @@ Page({
     openId:"",
     pldata:"",
     plwin:false,
+    dianzan:false,
     pltext:"",
     userlng:"",
     userlat:"",
@@ -21,7 +22,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
     //获取openid
     let that = this;
     wx.getStorage({
@@ -36,7 +36,7 @@ Page({
         that.getcomtentlist(res.data, options.uuid);
       },
       fail:function(res){
-        app.globalData.logintogo = "/pages/pldetail/pldetail?uuid=" + that.data.uuid;
+        app.globalData.logintogo = "/pages/infor/infor";
         wx.navigateTo({
           url: '/pages/authorize/authorize',
         })
@@ -161,6 +161,33 @@ Page({
       }
     })
   },
+  //点赞
+  praise: function () {
+    var praisedata = {
+      uuid: this.data.pldata.uuid,
+      openId: this.data.openId
+    }
+    console.log(praisedata);
+    var that = this;
+    wx.request({
+      url: app.requesturl + '/dynamic/praise?uuid=' + this.data.pldata.uuid + "&openId=" + this.data.openId,
+      method: "POST",
+      success: function (res) {
+        console.log(res);
+        if (res.data.code == "100") {
+          var dianzan = !that.data.dianzan;
+          that.setData({
+            dianzan: dianzan
+          })
+        }
+      }
+    })
+  },
+  //分享
+  share:function(){
+   //console.log("share"); 
+    this.onShareAppMessage();
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -202,6 +229,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    console.log(this);
+    return {
+      title: this.data.pldata.characters,
+      path: '/pages/pldetail/pldetail?uuid=' + this.data.pldata.uuid,
+      imageUrl: this.data.pldata.medias[0].filePath,
+      success: (res) => {
+        console.log(res);
+      }
+    }
   }
 })

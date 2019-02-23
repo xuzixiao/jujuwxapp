@@ -10,6 +10,7 @@
     "pages/activepushsuccess/activepushsuccess",
     "pages/pushactive/pushactive",
     "pages/myinfor/myinfor",
+    "pages/myactive/myactive",
     "pages/joinlist/joinlist",
     "pages/activity/activity",
     "pages/pldetail/pldetail",
@@ -18,7 +19,8 @@
     "pages/about/about",
     "pages/feedback/feedback",
     "components/activelist/activelist",
-    "pages/serveragreement/index"
+    "pages/serveragreement/index",
+    "pages/myjoinactive/myactive"
   ],
   "permission": {
     "scope.userLocation": {
@@ -26,7 +28,7 @@
     }
   },
   "window": {
-    "navigationBarTitleText": "聚聚，分享美好时光",
+    "navigationBarTitleText": "Hi聚聚，分享美好时光",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#eeeeee",

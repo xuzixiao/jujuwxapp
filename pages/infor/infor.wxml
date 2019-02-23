@@ -13,7 +13,7 @@
    wx:key="index"
    ></infolist>
 
- <view class='zanwu' wx:if="{{nodata}}">
+ <view class='zanwu' wx:if="{{infolist.length===0&&nothave}}">
     <view><van-icon name="fail" size='30px' /></view>
     <view class='zanwuinfo'>当前地区暂无动态</view>
  </view>

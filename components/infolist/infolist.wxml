@@ -5,9 +5,7 @@
     <view class='userinfo'>
       <view class='username'>{{infordata.createUser.nickName}}</view>
       <view class='usrtap'>
-        <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
-        <labeltag text="测试标签" color="#1890FF" background="#BAE7FF"></labeltag>
-        <labeltag text="测试标签" color="#F759AC" background="#FFD5E7"></labeltag>
+        <labeltag  wx:for="{{infordata.createUser.labels}}" wx:key="{{index}}" text="{{item.text}}" color="{{item.textColor}}" background="{{item.backgroundColor}}" wx:if="{{index<3}}"></labeltag>
       </view>
     </view>
   </view>
@@ -65,7 +63,7 @@
         <view class='infor-icon'>
           <van-icon name="share"  color='#97A9B8' size='14px' />
           </view>
-          <text>{{infordata.commentNumNotRead}}</text>
+          <!-- <text>{{infordata.commentNumNotRead}}</text> -->
         </view>
       </view>
     </view>

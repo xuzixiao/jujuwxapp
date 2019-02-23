@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的活动",
+    "usingComponents": {
+    "van-icon": "/vant/icon/index",
+    "activelist": "/components/myactivelist/activelist",
+    "van-loading": "/vant/loading/index"
+    }
+}

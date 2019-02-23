@@ -1,13 +1,4 @@
 <view class='info-list'>
-  <view class='info-head'>
-    <image src='{{infordata.createUser.avatarUrl}}' class='headimg'></image>
-    <view class='userinfo'>
-      <view class='username'>{{infordata.createUser.nickName}}</view>
-      <view class='usrtap'>
-      <labeltag  wx:for="{{infordata.createUser.labels}}" wx:key="{{index}}" text="{{item.text}}" color="{{item.textColor}}" background="{{item.backgroundColor}}" wx:if="{{index<3}}"></labeltag>
-      </view>
-    </view>
-  </view>
   <!-- 说明文字 -->
   <view class='infotext'>
     <text>{{infordata.characters}}</text>
@@ -27,31 +18,32 @@
     <view class='infohand-line'>
       <van-icon name="location" custom-class="location" />
       <text>{{infordata.place}}</text>
-      <text>{{distance}}</text>
     </view>
 
     <view class='infohand-line'>
-      <text>{{outtime}}</text>
       <text>{{infordata.browseNum}}浏览</text>
-      <!-- <text class='delthisinfo'>删除</text> -->
+      <text class='delthisinfo' bindtap='delinfo'>删除</text>
     </view>
-
-    <!-- <view class='infohand-line'>
+<navigator url='/pages/pldetail/pldetail?uuid={{infordata.uuid}}'>
+    <view class='infohand-line'>
       <view class='l-item'>
-        <van-icon name="like-o" size='12' color="{{dianzan?'#c00':'#97A9B8'}}" custom-class="l-item-tb" bindtap='praise'/>
+        <van-icon name="like-o" size='12' custom-class="l-item-tb" bindtap='praise'/>
         <text>{{infordata.praiseNum}} </text>
       </view>
 
       <view class='l-item'>
-        <van-icon name="chat" size='12' color='#97A9B8' custom-class="l-item-tb" />
+        
+        <van-icon name="chat" size='12' custom-class="l-item-tb" />
         <text>{{infordata.commentNumAll}} </text>
+
       </view>
 
       <view class='l-item'>
-        <van-icon name="share" size='12' color='#97A9B8' custom-class="l-item-tb" bindtap='share' />
+        <van-icon name="share" size='12' custom-class="l-item-tb" />
         <text>0</text>
       </view>
-    </view> -->
+    </view>
+            </navigator>
   </view>
 </view>
 

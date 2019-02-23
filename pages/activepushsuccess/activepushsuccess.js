@@ -1,18 +1,21 @@
 // pages/activepushsuccess/activepushsuccess.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    activedata:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      activedata: app.globalData.activepushdata
+    })
   },
 
   /**
@@ -61,6 +64,15 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that=this;
+    debugger;
+    return {
+      title: that.data.activedata.theme,
+      path: '/pages/activedetail/activedetail?uuid=',
+      imageUrl: that.data.activedata.coverUrl,
+      success: (res) => {
+        console.log(res);
+      }
+    }
   }
 })

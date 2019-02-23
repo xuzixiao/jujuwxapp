@@ -3,22 +3,13 @@
     <image src='{{userinfo.avatarUrl}}' class='headimg'></image>
     <view class='userinfo'>
       <view class='username'>{{userinfo.nickName}}</view>
-      <view class='userinforlength'>N条动态</view>
+      <view class='userinforlength'>共发布N条活动</view>
     </view>
   </view>
 </view>
 
 <view class='myinforlist'>
-<infolist
-   wx:for="{{infolist}}"
-   index="{{index}}"
-   infordata="{{item}}"
-   openid="{{openid}}"
-   lat="{{userlocaltion.lat}}"
-   lon="{{userlocaltion.lon}}"
-   wx:key="index"
-   bind:myevent="deldata"
-   ></infolist>
+<activelist wx:for="{{activelist}}" wx:key="{{index}}" activedata="{{item}}"></activelist>
 </view>
 
    <view class='loading' wx:if="{{xialaload}}">

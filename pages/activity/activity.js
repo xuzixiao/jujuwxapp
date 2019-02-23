@@ -109,7 +109,12 @@ Page({
               activelist: that.data.activelist.concat(res.data.data),
               xialaload: false
             })
-          }
+          } 
+        } else if (res.data.code == "002") {
+          that.setData({
+            xialaload: true,
+            nothave: true,
+          })
         }
       }
     })

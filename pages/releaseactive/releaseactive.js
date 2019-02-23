@@ -205,9 +205,11 @@ getlocaltion:function(){
       method:"POST",
       data: this.data.puactivedata,
       success:function(res){
-        console.log(res);
         if(res.data.code=="100"){
           Toast("发布成功");
+          wx.navigateBack({
+            delta: -1
+          });     
         }else{
           Toast(res.data.data);
         }

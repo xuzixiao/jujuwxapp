@@ -13,9 +13,9 @@
     <text class='line-label'>个人动态</text>
     <view class="line-input">
     <navigator class='action' url="/pages/myinfor/myinfor">
+        <!-- <image src='/images/infoimg.jpg '></image>
         <image src='/images/infoimg.jpg '></image>
-        <image src='/images/infoimg.jpg '></image>
-        <image src='/images/infoimg.jpg '></image>
+        <image src='/images/infoimg.jpg '></image> -->
         <van-icon name="arrow" class='action-icon' color="#666666" size="10px;" />
     </navigator>
     </view>
@@ -57,9 +57,7 @@
 </view>
 <view class='nav-item biaoqian'>
   <view class='line'>
-    <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
-    <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
-    <labeltag text="测试标签" color="#FF7A45" background="#FFD8BF"></labeltag>
+  <labeltag wx:for="{{createuser.labels}}" wx:key="{{index}}" class='tapcard' text="{{item.text}}" color="{{item.textColor}}" background="{{item.backgroundColor}}" wx:if="{{index<3}}"></labeltag>
   </view>
 </view>
 

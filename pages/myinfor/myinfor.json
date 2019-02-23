@@ -2,7 +2,8 @@
     "navigationBarTitleText": "我的动态",
     "usingComponents": {
     "van-icon": "/vant/icon/index",
-    "infolist": "/components/pldetailinfo/infolist",
-    "unreadtip": "/components/unreadtip/unreadtip"
+    "infolist": "/components/myinfolist/infolist",
+    "unreadtip": "/components/unreadtip/unreadtip",
+    "van-loading": "/vant/loading/index"
     }
 }

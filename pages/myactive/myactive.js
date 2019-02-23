@@ -13,7 +13,7 @@ Page({
       nickName: ""
     },
     pageNum:1,
-    infolist:[],
+    activelist:[],
     userlocaltion: {
       lat: "",
       lon: ""
@@ -29,8 +29,8 @@ Page({
     var that=this;
     wx.getStorage({
       key: 'userInfo',
-      success: function(res) {
-        var userinfo=res.data;
+      success: function (res) {
+        var userinfo = res.data;
         console.log(userinfo);
         that.setData({
           "userinfo.avatarUrl": userinfo.avatarUrl,
@@ -44,7 +44,10 @@ Page({
         that.setData({
           openId: res.data
         })
-        that.getinfordata(res.data);
+        that.getactivedata(res.data);
+      },
+      fail:function(){
+
       }
     })
     //位置信息
@@ -73,13 +76,13 @@ Page({
   onReady: function () {
   
   },
-  getinfordata:function(openId){
+  getactivedata:function(openId){
     if(openId==null||openId==undefined){
       openId=this.data.openId
     }
     var that=this;
     wx.request({
-      url: app.requesturl + 'dynamic/findByPage?openId=' + openId,
+      url: app.requesturl + 'activity/findByPage?openId=' + openId,
       method:"POST",
       data:{
         openId: openId,
@@ -88,25 +91,17 @@ Page({
       success(res){
         if(res.data.code==="100"){
           that.setData({
-            infolist: that.data.infolist.concat(res.data.data),
-            xialaload: false,
+            activelist: that.data.activelist.concat(res.data.data),
+            xialaload: false
           })
-        } else if (res.data.code === "002"){
+        }else if(res.data.code==="002"){
           that.setData({
             xialaload: true,
             nothave: true
           })
         }
+       
       }
-    })
-
-  },
-  deldata:function(e){
-    let index=e.detail.index;
-    let infolist = this.data.infolist;
-    infolist.splice(index, 1)
-    this.setData({
-      infolist: infolist
     })
   },
   /**
@@ -129,14 +124,12 @@ Page({
   onUnload: function () {
 
   },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
 
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -149,11 +142,10 @@ Page({
       })
       let that=this;
       setTimeout(function(){
-        that.getinfordata();
+        that.getactivedata();
       },800)
     }
   },
-
   /**
    * 用户点击右上角分享
    */

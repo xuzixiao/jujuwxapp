@@ -54,13 +54,23 @@ Page({
   this.getToken()
   let that=this;
     wx.getStorage({
-      key: 'openid',
-      success: function(res) {
+      key: 'userInfo',
+      success: function (res) {
+        let userdata = res.data;
+        let labels;
+        userdata.labels == null ? labels = [] : labels = userdata.labels;
         that.setData({
-          "userinfo.openId":res.data
-        })
-        //获取用户信息
-        that.getuserInfo(res.data);
+          "userheadimg": userdata.avatarUrl,
+          "userinfo.avatarUrl": userdata.avatarUrl,
+          "userinfo.nickName": userdata.nickName,
+          "userinfo.region": userdata.region,
+          "userinfo.oftenDrinkAlcohol": userdata.oftenDrinkAlcohol,
+          "userinfo.oftenDiscoPlace": userdata.oftenDiscoPlace,
+          "userinfo.oftenRegion": userdata.oftenRegion,
+          "userinfo.discoDeclaration": userdata.discoDeclaration,
+          "userinfo.labels": labels,
+          "userinfo.openId": userdata.openId
+        })   
       },
     })
   },
@@ -77,6 +87,11 @@ Page({
       console.log(res);
       if (res.data.code=="100"){
         let userdata = res.data.data;
+        app.globalData.userInfo = userdata;
+        wx.setStorage({
+          key: 'userInfo',
+          data: userdata,
+        })
         let labels;
         userdata.labels == null ? labels = []:labels = userdata.labels;
         that.setData({

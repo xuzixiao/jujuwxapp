@@ -66,37 +66,26 @@ Page({
         if(res.data.code=="100"){
           if (type == undefined || type == "" || type == null || type == 'update'){
             that.setData({
-              infolist: res.data.data
+              infolist: res.data.data,
+              nodata:false
             })
           } else if (type == 'add'){
             that.setData({
               infolist: that.data.infolist.concat(res.data.data),
-              xialaload: false
+              xialaload: false,
+              nodata: false
             })
           }
         } else if (res.data.code == "002"){
           that.setData({
-            nodata:true
+            xialaload:true,
+            nothave:true,
           })
         }
       }
     })
   },
   onLoad: function () {
-    //获取当前位置坐标
-    wx.getLocation({
-      success: function (res) {
-        console.log(res);
-        wx.setStorage({
-          key: 'latitude',
-          data: res.latitude
-        })
-        wx.setStorage({
-          key: 'longitude',
-          data: res.longitude
-        })
-      }
-    })
     var that=this;
     wx.getStorage({
       key: 'openid',
@@ -106,26 +95,26 @@ Page({
         })
       }
     })
-    //位置信息
-    wx.getStorage({
-      key: 'latitude',
-      success: function(res) {
-        that.setData({
-          'userlocaltion.lat': res.data
-        })
+    if (app.globalData.userlocaltion && app.globalData.userlocaltion!=""){
+      that.setData({
+        "userlocaltion.lat": app.globalData.userlocaltion.lat,
+        "userlocaltion.lon": app.globalData.userlocaltion.lon
+      })
+      this.getinfolist();
+    }else{
+      app.employIdCallback = userlocaltion => {
+        if (userlocaltion != '') {
+          that.setData({
+            "userlocaltion.lat": app.globalData.userlocaltion.lat,
+            "userlocaltion.lon": app.globalData.userlocaltion.lon
+          })
+          this.getinfolist();
+        }
       }
-    })
-    wx.getStorage({
-      key: 'longitude',
-      success: function (res) {
-        that.setData({
-          'userlocaltion.lon': res.data
-        })
-      }
-    })
+    }
   },
   onReady:function(){
-    this.getinfolist();
+  
   },
   onPullDownRefresh:function(){//上拉刷新
     this.getinfolist("update");

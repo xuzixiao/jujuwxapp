@@ -284,6 +284,7 @@ Page({
       success:function(res){
         console.log(res);
         if(res.data.code=="100"){
+          app.globalData.activepushdata = pushdata;
           wx.navigateTo({
             url: '/pages/activepushsuccess/activepushsuccess',
           })

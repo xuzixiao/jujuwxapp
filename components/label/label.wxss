@@ -5,6 +5,6 @@
   float: left;
   margin: 10rpx 15rpx 10rpx 0rpx;
   line-height: 60rpx;
-  font-size: 30rpx;
+  font-size: 27rpx;
   padding: 0 15rpx;
 }

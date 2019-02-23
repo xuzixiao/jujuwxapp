@@ -24,6 +24,9 @@ Component({
    * 组件的初始数据
    */
   data: {
+    dianzan:false,
+    active:"#c00",
+    defult:"#97A9B8",
     infordata:"",
     openId:"",
     outtime:"",
@@ -43,11 +46,18 @@ Component({
         openId: this.data.openId
       }
       console.log(praisedata);
+      var that=this;
       wx.request({
         url: app.requesturl + '/dynamic/praise?uuid=' + this.data.infordata.uuid + "&openId=" + this.data.openId,
         method:"POST",
         success:function(res){
           console.log(res);
+          if(res.data.code=="100"){
+            var dianzan = !dianzan;
+            that.setData({
+              dianzan: dianzan
+            })
+          }
         }
       })
     },
@@ -76,6 +86,10 @@ Component({
         bimgindex: imgindex,
         showBimg: true
       })
+    },
+    //转发
+    share:function(){
+      this.triggerEvent("share");
     }
   }
 })

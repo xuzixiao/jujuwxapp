@@ -9,9 +9,9 @@
   <!-- 发起人板块 -->
 
 <view class='Originator'>
-  <image src='{{activedetail.coverUrl}}' class='originheadimg'></image>
+  <image src='{{activedetail.createUser.avatarUrl}}' class='originheadimg'></image>
   <view class='originator-main'>
-    <view>发起人：{{activedetail.createUser}}</view>
+    <view>发起人：{{activedetail.createUser.nickName}}</view>
     <view>发起时间：{{date}} {{week}}</view>
     <view>电话：{{activedetail.createUserPhone}}</view>
     <view>微信：{{activedetail.createUserWechatNumber}}</view>

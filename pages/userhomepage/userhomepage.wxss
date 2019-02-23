@@ -129,3 +129,6 @@ margin: 10rpx;
 .xuanyan{
   line-height: 70rpx!important;
 }
+.tapcard{
+  margin-bottom: 10px;
+}

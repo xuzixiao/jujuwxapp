@@ -18,16 +18,16 @@
     <image src='/images/Shape4@3x.svg'></image>
     </navigator>
 
-      <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover">
+      <navigator url="/pages/myactive/myactive" hover-class="navigator-hover">
     <icon class='label'></icon>
     <text>我的活动</text>
     <image src='/images/Shape4@3x.svg'></image>
     </navigator>
 
-      <navigator url="/pages/myinfor/myinfor" hover-class="navigator-hover">
-    <icon class='label'></icon>
-    <text>我的参与</text>
-    <image src='/images/Shape4@3x.svg'></image>
+    <navigator url="/pages/myjoinactive/myactive" hover-class="navigator-hover">
+      <icon class='label'></icon>
+      <text>我的参与</text>
+      <image src='/images/Shape4@3x.svg'></image>
     </navigator>
 
       <navigator url="/pages/feedback/feedback" hover-class="navigator-hover">
